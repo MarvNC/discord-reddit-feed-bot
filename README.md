@@ -1,6 +1,6 @@
 # discord-reddit-feed-bot [![Build Status](https://travis-ci.org/zikeji/discord-reddit-feed-bot.svg?branch=master)](https://travis-ci.org/zikeji/discord-reddit-feed-bot)
 
-Edited by marv for use on glitch.com, and updated some stuff that needed updating. Also, made it embed the images instead of thumbnails for all posts as I wanted to output images to discord.
+Forked by marv for use on glitch.com, and updated some stuff that needed updating. Also, made it embed the images instead of thumbnails for all posts as I wanted to output images to discord.
 
 **Table of Contents**
 
