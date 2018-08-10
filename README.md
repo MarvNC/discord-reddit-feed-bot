@@ -1,5 +1,7 @@
 # discord-reddit-feed-bot [![Build Status](https://travis-ci.org/zikeji/discord-reddit-feed-bot.svg?branch=master)](https://travis-ci.org/zikeji/discord-reddit-feed-bot)
 
+Edited by marv for use on glitch.com, and updated some stuff that needed updating. Also, made it embed the images instead of thumbnails for all posts as I wanted to output images to discord.
+
 **Table of Contents**
 
 - [Installation](#installation)
@@ -34,7 +36,7 @@ See their documentation for instructions on auto-launching apps on boot.
 | `DISCORD_TOKEN` | the bot API token you've created, get one [here](https://discordapp.com/developers/applications/me) |
 | `DISCORD_SERVERID` | the server ID you want to post new links and selftexts to |
 | `DISCORD_CHANNELID` | the specific channel in the server they'll be posted to |
-| `SUBREDDIT` | the subreddit name (examples: `news`, `gaming`, etc.) |
+| `SUBREDDIT` | the full subreddit name after https://reddit.com/ (examples: `r/news`, `r/gaming`, `/user/example/m/multiredditname` etc.) |
 | `EMBED_COLOR` | the hex color code you want to use to color the embed (the leftmost portion of the message), defaults to `#007cbf` |
 | `LOGGING_LEVEL` | everything is logged to console only, which is why I recommend PM2. Options are `debug`, `info`, `warn`, or `error` |
 
