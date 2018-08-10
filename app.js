@@ -35,10 +35,7 @@ let Channel;
 bot.on('ready', () => {
   // bot.user.setStatus('online', `Spamming F5 on /${process.env.SUBREDDIT}`).then(logger.info('Changed status!')).catch('ready failed to change status', logger.error); // if you want to change the status of the bot and set the game playing to something specific you may uncomment this
 
-  Guild = bot.guilds.get(process.env.DISCORD_SERVERID);
-  if (Guild) {
-    Channel = Guild.channels.get(process.env.DISCORD_CHANNELID);
-  }
+  Channel = bot.channels.get(process.env.DISCORD_CHANNELID);
 
   if (!Channel) {
     logger.error('A matching channel could not be found. Please check your DISCORD_SERVERID and DISCORD_CHANNELID environment variables.');
