@@ -15,7 +15,7 @@ Forked by marv for use on glitch.com, and updated some stuff that needed updatin
 
 ### Installation
 
- - `git clone https://github.com/zikeji/discord-reddit-feed-bot`
+ - `git clone https://github.com/MarvNC/discord-reddit-feed-bot`
  - `cd discord-reddit-feed-bot`
  - `npm install`
  - Ensure the environment variables are set. See **Environment Variables** below. Optionally you can use a .env file to populate these environment variables (see [.env.example](https://github.com/zikeji/discord-reddit-feed-bot/blob/master/.env.example))
