@@ -21,7 +21,7 @@ const Discord = require('discord.js');
 const request = require('request');
 const entities = require('entities');
 const logger = require('./logger');
-const valid = require('valid-url');
+const validUrl = require('valid-url');
 
 const bot = new Discord.Client();
 
