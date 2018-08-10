@@ -34,8 +34,7 @@ See their documentation for instructions on auto-launching apps on boot.
 | Variable | Description |
 | -------- | ----------- |
 | `DISCORD_TOKEN` | the bot API token you've created, get one [here](https://discordapp.com/developers/applications/me) |
-| `DISCORD_SERVERID` | the server ID you want to post new links and selftexts to |
-| `DISCORD_CHANNELID` | the specific channel in the server they'll be posted to |
+| `DISCORD_CHANNELID` | the ID of the channel reddit content will be posted to |
 | `SUBREDDIT` | the full subreddit name after https://reddit.com/ (examples: `r/news`, `r/gaming`, `/user/example/m/multiredditname` etc.) |
 | `EMBED_COLOR` | the hex color code you want to use to color the embed (the leftmost portion of the message), defaults to `#007cbf` |
 | `LOGGING_LEVEL` | everything is logged to console only, which is why I recommend PM2. Options are `debug`, `info`, `warn`, or `error` |
