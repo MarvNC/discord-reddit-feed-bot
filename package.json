@@ -22,12 +22,14 @@
   },
   "homepage": "https://www.github.com/zikeji/discord-reddit-feed-bot",
   "dependencies": {
-    "discord.js": "^11.0.0",
-    "dotenv": "^2.0.0",
+    "discord.js": "^11.4.0",
+    "dotenv": "^6.0.0",
     "entities": "^1.1.1",
-    "request": "^2.74.0 ",
+    "request": "^2.88.0",
     "valid-url": "^1.0.9",
-    "winston": "^2.2.0"
+    "winston": "^3.0.0",
+    "express-graphql": "^0.6.12",
+    "express": "^4.16.3"
   },
   "devDependencies": {
     "eslint": "^3.2.0",
