@@ -73,8 +73,8 @@ setInterval(() => {
             embed.setTitle(`${entities.decodeHTML(post.data.title)}`);
             embed.setURL(`https://redd.it/${post.data.id}`);
             embed.setDescription(`${post.data.is_self ? entities.decodeHTML(post.data.selftext.length > 253 ? post.data.selftext.slice(0, 253).concat('...') : post.data.selftext) : ''}`);
-            if (validUrl.isUri(post.data.url.preview.images[0].source.url)) {
-              embed.setImage(entities.decodeHTML(post.data.url.preview.images[0].source.url));
+            if (validUrl.isUri(post.data.preview.images[0].source.url)) {
+              embed.setImage(entities.decodeHTML(post.data.preview.images[0].source.url));
             } else {
               embed.setThumbnail(post.data.thumbnail);
             }
