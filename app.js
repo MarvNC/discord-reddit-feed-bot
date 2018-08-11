@@ -5,7 +5,7 @@ const listener = app.listen(process.env.PORT, () => {
   console.log(`Your app is listening on port ${listener.address().port}`)
 })
 
-const http = require('http');
+const http = require('http'); 
 app.get("/", (request, response) => {
   response.sendStatus(200);
 });
@@ -73,7 +73,7 @@ setInterval(() => {
             embed.setTitle(`${entities.decodeHTML(post.data.title)}`);
             embed.setURL(`https://redd.it/${post.data.id}`);
             embed.setDescription(`${post.data.is_self ? entities.decodeHTML(post.data.selftext.length > 253 ? post.data.selftext.slice(0, 253).concat('...') : post.data.selftext) : ''}`);
-            if (validUrl.isUri(post.data.url.preview.images.source.url)) {
+            if (validUrl.isUri(post.data.url.preview.images[0].source.url)) {
               embed.setImage(entities.decodeHTML(post.data.url.preview.images.source.url));
             } else {
               embed.setThumbnail(post.data.thumbnail);
