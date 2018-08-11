@@ -30,7 +30,6 @@ bot.login(process.env.DISCORD_TOKEN);
 let botReady = false;
 let lastTimestamp = Math.floor(Date.now() / 1000);
 
-let Guild;
 let Channel;
 bot.on('ready', () => {
   // bot.user.setStatus('online', `Spamming F5 on /${process.env.SUBREDDIT}`).then(logger.info('Changed status!')).catch('ready failed to change status', logger.error); // if you want to change the status of the bot and set the game playing to something specific you may uncomment this
@@ -38,7 +37,7 @@ bot.on('ready', () => {
   Channel = bot.channels.get(process.env.DISCORD_CHANNELID);
 
   if (!Channel) {
-    logger.error('A matching channel could not be found. Please check your DISCORD_SERVERID and DISCORD_CHANNELID environment variables.');
+    logger.error('A matching channel could not be found. Please check your DISCORD_CHANNELID environment variable.');
     process.exit(1);
   } else {
     logger.info('Ready');
@@ -71,10 +70,14 @@ setInterval(() => {
 
             const embed = new Discord.RichEmbed();
             embed.setColor(process.env.EMBED_COLOR || '#007cbf');
-            embed.setTitle(`${post.data.link_flair_text ? `[${post.data.link_flair_text}] ` : ''}${entities.decodeHTML(post.data.title)}`);
+            embed.setTitle(`${entities.decodeHTML(post.data.title)}`);
             embed.setURL(`https://redd.it/${post.data.id}`);
             embed.setDescription(`${post.data.is_self ? entities.decodeHTML(post.data.selftext.length > 253 ? post.data.selftext.slice(0, 253).concat('...') : post.data.selftext) : ''}`);
-            embed.setImage(validUrl.isUri(post.data.url) ? entities.decodeHTML(post.data.url) : null);
+            if (validUrl.isUri(post.data.url.preview.images.source.url)) {
+              embed.setImage(entities.decodeHTML(post.data.url.preview.images.source.url));
+            } else {
+              embed.setThumbnail(post.data.thumbnail);
+            }
             embed.setFooter(`/u/${post.data.author} in /r/${post.data.subreddit}`);
             embed.setTimestamp(new Date(post.data.created_utc * 1000));
 
