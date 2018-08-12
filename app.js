@@ -76,7 +76,7 @@ setInterval(() => {
 						if (post.data.preview) {
 							embed.setImage(entities.decodeHTML(post.data.preview.images[0].source.url));
 						} else {
-							embed.setThumbnail(post.data.thumbnail);
+							embed.setThumbnail(validUrl.isWebUri(post.data.thumbnail) ? post.data.thumbnail : null);
 						}
 						embed.setFooter(`/u/${post.data.author} in /r/${post.data.subreddit}`);
 						embed.setTimestamp(new Date(post.data.created_utc * 1000));
