@@ -66,26 +66,29 @@ setInterval(() => {
 				logger.debug('Request succeeded, lastTimestamp = ', lastTimestamp);
 				for (const post of body.data.children.reverse()) {
 					if (lastTimestamp <= post.data.created_utc) {
-						lastTimestamp = post.data.created_utc;
+						//waits 30sec for preview to show up on reddit
+						if (Math.floor(Date.now() / 1000) + 30 <= post.data.created_utc) {
+							lastTimestamp = post.data.created_utc;
 
-						const embed = new Discord.RichEmbed();
-						embed.setColor(process.env.EMBED_COLOR || '#007cbf');
-						embed.setTitle(`${entities.decodeHTML(post.data.title)}`);
-						embed.setURL(`https://redd.it/${post.data.id}`);
-						embed.setDescription(`${post.data.is_self ? entities.decodeHTML(post.data.selftext.length > 253 ? post.data.selftext.slice(0, 253).concat('...') : post.data.selftext) : ''}`);
-						if (post.data.preview) {
-							embed.setImage(entities.decodeHTML(post.data.preview.images[0].source.url));
-						} else {
-							embed.setThumbnail(validUrl.isWebUri(post.data.thumbnail) ? post.data.thumbnail : null);
+							const embed = new Discord.RichEmbed();
+							embed.setColor(process.env.EMBED_COLOR || '#007cbf');
+							embed.setTitle(`${entities.decodeHTML(post.data.title)}`);
+							embed.setURL(`https://redd.it/${post.data.id}`);
+							embed.setDescription(`${post.data.is_self ? entities.decodeHTML(post.data.selftext.length > 253 ? post.data.selftext.slice(0, 253).concat('...') : post.data.selftext) : ''}`);
+							if (post.data.preview) {
+								embed.setImage(entities.decodeHTML(post.data.preview.images[0].source.url));
+							} else {
+								embed.setThumbnail(validUrl.isWebUri(post.data.thumbnail) ? post.data.thumbnail : null);
+							}
+							embed.setFooter(`/u/${post.data.author} in /r/${post.data.subreddit}`);
+							embed.setTimestamp(new Date(post.data.created_utc * 1000));
+
+							Channel.send('', embed).then(() => {
+								logger.debug(`Sent message for new post https://redd.it/${post.data.id}`);
+							}).catch(err => {
+								logger.error(embed, err);
+							});
 						}
-						embed.setFooter(`/u/${post.data.author} in /r/${post.data.subreddit}`);
-						embed.setTimestamp(new Date(post.data.created_utc * 1000));
-
-						Channel.send('', embed).then(() => {
-							logger.debug(`Sent message for new post https://redd.it/${post.data.id}`);
-						}).catch(err => {
-							logger.error(embed, err);
-						});
 					}
 				}
 				++lastTimestamp;
