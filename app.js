@@ -67,7 +67,7 @@ setInterval(() => {
 				for (const post of body.data.children.reverse()) {
 					if (lastTimestamp <= post.data.created_utc) {
 						//waits 30sec for preview to show up on reddit
-						if (Math.floor(Date.now() / 1000) + 30 <= post.data.created_utc) {
+						if (Math.floor(Date.now() / 1000) + 30 >= post.data.created_utc) {
 							lastTimestamp = post.data.created_utc;
 
 							const embed = new Discord.RichEmbed();
