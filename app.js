@@ -99,3 +99,11 @@ setInterval(() => {
 		});
 	}
 }, 30 * 1000); // 30 seconds
+
+bot.on('error', (error) => {
+    console.log(error.message);
+    setTimeout(() => {
+        console.log('Reconnecting bot client');
+        bot.login(process.env.DISCORD_TOKEN);
+    }, 5000);
+});
