@@ -1,0 +1,18 @@
+{
+    "glitch": true,
+    "token": "randomdiscordtoken3123124125412",
+    "subToIds": [
+        [
+            "user/reddit/m/multireddit",
+            "111111111111111111"
+        ],
+        [
+            "r/all",
+            "222222222222222222"
+        ],
+        [
+            "r/random",
+            "123456789011111111"
+        ]
+    ]
+}
