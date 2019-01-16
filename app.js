@@ -70,10 +70,10 @@ config.subToIds.forEach((sub) => {
                                 embed.setURL(`https://redd.it/${post.data.id}`);
                                 embed.setDescription(post.data.is_self ? entities.decodeHTML(post.data.selftext.length > 1000 ? post.data.selftext.slice(0, 1000).concat('...') : post.data.selftext) : '');
                                 //if its nsfw or spoiler and the sub is configured to suppress nsfw or spoilers then dont send image
-                                if((post.data.over_18 ? (sub.nsfw !== null ? !sub.nsfw : false) : false) || (post.data.spoiler ? (sub.spoiler !== null ? !sub.spoiler : false) : false)){
+                                if((post.data.over_18 ? !sub.nsfw : false) || (post.data.spoiler ? !sub.spoiler : false)){
                                     if(!post.data.is_self){
                                         embed.setDescription('Link post marked as NSFW/spoilers.');
-                                    } else if(post.data.spoiler && sub.spoiler !== null ? !sub.spoiler : false){
+                                    } else if(post.data.spoiler && !sub.spoiler){
                                         // remove text if spoiler and sub is configured to suppress spoilers
                                         embed.setDescription('Text post marked as spoilers.')
                                     }
