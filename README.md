@@ -19,9 +19,9 @@ Variable | Description
 
 Variable | Description
 -------- | -----------
-slug | The slug of the subreddit or multireddit to take from. For example, the slug for /r/askreddit would be `r/askreddit`
-channelID | The ID of the discord channel to send posts to.
-delay | How long to wait before sending a post to discord. Defaults at 60. Is useful to give people time to mark their posts as NSFW, and wait for the reddit preview image to load.
-nsfw | A boolean for whether to show NSFW images or not. Defaults to true. If not, the embed will instead show a description saying the post is NSFW.
-spoilers | A boolean for whether to show posts marked as spoiler or not. Defaults to true. If not, the text or image will not be displayed and instead be marked as a spoiler.
-color | The color of the embed. Defaults to `#036393F`, which is the same color as the embed.![example](https://i.imgur.com/RucygrK.png)
+`slug` | The slug of the subreddit or multireddit to take from. For example, the slug for /r/askreddit would be `r/askreddit`
+`channelID` | The ID of the discord channel to send posts to.
+`delay` | How long to wait before sending a post to discord. Defaults at 60. Is useful to give people time to mark their posts as NSFW, and wait for the reddit preview image to load.
+`nsfw` | A boolean for whether to show NSFW images or not. Defaults to true. If not, the embed will instead show a description saying the post is NSFW.
+`spoilers` | A boolean for whether to show posts marked as spoiler or not. Defaults to true. If not, the text or image will not be displayed and instead be marked as a spoiler.
+`color` | The color of the embed. Defaults to `#036393F`, which is the same color as the embed.![example](https://i.imgur.com/RucygrK.png)
