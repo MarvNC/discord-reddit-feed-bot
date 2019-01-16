@@ -1,7 +1,8 @@
 # discord-reddit-feed-bot
 
-Forked to update some stuff that needed updating, and added stuff for use on glitch.com. Also, added features of my own.
-Added 
+Forked from `zikeji/discord-reddit-feed-bot` to update some stuff that needed updating, and added stuff for use on glitch.com. Also, added features of my own.
+
+Added:
 - embed images instead of thumbnails for link posts
 - Multiple subreddit feeds to different channels
 - Supress NSFW or spoiler posts's contents from being sent to discord
