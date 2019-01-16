@@ -1,18 +1,22 @@
 {
-    "glitch": true,
-    "token": "randomdiscordtoken3123124125412",
+    "token": "discordBoTtoken31232",
     "subToIds": [
-        [
-            "user/throwaway123/m/examplemultireddit",
-            "111111111111111111"
-        ],
-        [
-            "r/all",
-            "222222222222222222"
-        ],
-        [
-            "r/random",
-            "123456789011111111"
-        ]
+        {
+            "slug": "r/test",
+            "channelID": "111111111111",
+            "delay": 60,
+            "nsfw": true,
+            "spoiler": true,
+            "color": "FF0000"
+        },
+        {
+            "slug": "r/askreddit",
+            "channelID": "1321312312312312"
+        },
+        {
+            "slug": "u/throwaway123/multireddit",
+            "channelID": "0912743894052",
+            "delay": "300"
+        }
     ]
 }
