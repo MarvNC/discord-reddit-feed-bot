@@ -1,12 +1,14 @@
 # discord-reddit-feed-bot
 
-Forked from `zikeji/discord-reddit-feed-bot` to update some stuff that needed updating, and added stuff for use on glitch.com. Also, added features of my own.
+Forked from to update some stuff that needed updating because of discord.js changing, and added my own code for use of glitch.com. Also, added features of my own.
 
 Added:
 - embed images instead of thumbnails for link posts
 - Multiple subreddit feeds to different channels
 - Supress NSFW or spoiler posts's contents from being sent to discord
 - Set the delay to wait before sending a post
+- glitch.com timeout prevention
+**You should probably delete glitch.com code unless you are also using it**
 
 ### Json variables:
 
