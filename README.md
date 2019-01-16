@@ -5,7 +5,7 @@ Forked to update some stuff that needed updating, and added stuff for use on gli
 ### Json variables:
 
 Variable | Description
-- | -
+-------- | -----------
 `glitch` | Whether the code is running on glitch.com or not
 `token` | The discord bot's token. [This is a nice guide.](https://github.com/reactiflux/discord-irc/wiki/Creating-a-discord-bot-&-getting-a-token)
 `subToIds` | An array of objects for each feed. The object has a few variables in the next table.
@@ -13,7 +13,7 @@ Variable | Description
 - **subToIds variables**(configured for each sub)
 
 Variable | Description
-- | -
+-------- | -----------
 slug | The slug of the subreddit or multireddit to take from. For example, the slug for /r/askreddit would be `r/askreddit`
 channelID | The ID of the discord channel to send posts to.
 delay | How long to wait before sending a post to discord. Defaults at 60. Is useful to give people time to mark their posts as NSFW, and wait for the reddit preview image to load.
