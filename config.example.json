@@ -11,12 +11,16 @@
         },
         {
             "slug": "r/askreddit",
-            "channelID": "1321312312312312"
+            "channelID": "1321312312312312",
+            "nsfw": true,
+            "spoiler": true
         },
         {
             "slug": "u/throwaway123/multireddit",
             "channelID": "0912743894052",
-            "delay": "300"
+            "delay": "300",
+            "nsfw": false,
+            "spoiler": false
         }
     ]
 }
