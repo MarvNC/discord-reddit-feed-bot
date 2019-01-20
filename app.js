@@ -7,24 +7,23 @@ const config = require('./config.json');
 const client = new Discord.Client();
 
 
-//glitch
-const express = require('express')
-const app = express()
-app.use(express.static('public'))
-const listener = app.listen(process.env.PORT, () => {
-    console.log(`Your app is listening on port ${listener.address().port}`)
-})
+//glitch timeout prevent
+if(config.glitch){
+    const express = require('express')
+    const app = express()
+    app.use(express.static('public'))
+    const listener = app.listen(process.env.PORT, () => {
+        console.log(`Your app is listening on port ${listener.address().port}`)
+    })
 
-const http = require('http');
-app.get("/", (request, response) => {
-    response.sendStatus(200);
-});
-setInterval(() => {
-    http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 280000);
-
-
-//delete above part if not using glitch
+    const http = require('http');
+    app.get("/", (request, response) => {
+        response.sendStatus(200);
+    });
+    setInterval(() => {
+        http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+    }, 280000);
+}
 
 client.login(config.token);
 
