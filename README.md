@@ -9,8 +9,6 @@ Added:
 - Set the delay to wait before sending a post
 - glitch.com timeout prevention
 
-**You should probably delete glitch.com code unless you are also using it**
-
 ### Json variables:
 
 Variable | Description
