@@ -17,10 +17,16 @@
             "spoiler": true
         },
         {
-            "slug": "u/throwaway123/multireddit",
+            "slug": "u/throwaway123/m/multireddit",
             "channelID": "0912743894052",
             "delay": "300",
             "nsfw": false,
+            "spoiler": false
+        },
+        {
+            "slug": "user/karmawhore2/submitted",
+            "channelID": "312312312312",
+            "nsfw": true,
             "spoiler": false
         }
     ]
