@@ -102,7 +102,7 @@ config.subToIds.forEach((sub) => {
                 }
             });
         }
-    }, 3 * 1000); // checks for new posts every 30 seconds
+    }, 10 * 1000); // checks for new posts every 10 seconds
 });
 
 client.on('error', (error) => {
